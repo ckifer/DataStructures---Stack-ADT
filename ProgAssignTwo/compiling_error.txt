@@ -1,0 +1,32 @@
+In file included from /Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/main.cpp:10:
+/Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/stackType.h:64:31: error: out-of-line definition of 'top' does not match any declaration in 'stackType<ItemType>'
+ItemType stackType<ItemType>::top(){
+                              ^~~
+/Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/stackType.h:26:14: note: member declaration does not match because it is const qualified
+    ItemType top() const;
+             ^     ~~~~~
+/Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/stackType.h:74:35: error: expected expression
+    cout << "The stack is empty"; << endl;
+                                  ^
+/Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/main.cpp:24:31: error: expected expression
+     cout << copyStack.top(); << " ";
+                              ^
+In file included from /Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/main.cpp:10:
+/Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/stackType.h:113:6: warning: logical not is only applied to the left hand side of this comparison [-Wlogical-not-parentheses]
+  if(!this != &other){
+     ^     ~~
+/Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/main.cpp:21:14: note: in instantiation of member function 'stackType<int>::operator=' requested here
+   copyStack = stack;
+             ^
+/Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/stackType.h:113:6: note: add parentheses after the '!' to evaluate the comparison first
+  if(!this != &other){
+     ^
+      (             )
+/Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/stackType.h:113:6: note: add parentheses around left hand side expression to silence this warning
+  if(!this != &other){
+     ^
+     (    )
+/Users/coltinkifer/Documents/Sophomore Year/SCS 290/ProgAssignTwo/ProgAssignTwo/stackType.h:113:12: error: comparison between pointer and integer ('int' and 'const stackType<int> *')
+  if(!this != &other){
+     ~~~~~ ^  ~~~~~~
+1 warning and 4 errors generated.
