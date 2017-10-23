@@ -7,45 +7,49 @@
 //
 
 #include <iostream>
-#include "stackType.h"
+#include "stackType.hpp"
 
-void test(stackType<int>);
+using namespace std;
 
+// function prints stack forwards using recursion
+void printForwards(stackType<char> stack);
+
+//main function
 int main(int argc, const char * argv[]) {
-   stackType<int> stack(50), copyStack(50), dummyStack(100);
+   //initialize the stack
+   stackType<char> stack(50);
    stack.initializeStack();
-   stack.push(12);
-   stack.push(16);
-   stack.push(36);
-   stack.push(13);
-   copyStack = stack;
-   cout << "copyStack = ";
-   while (!copyStack.isEmptyStack()) {
-     cout << copyStack.top(); << " ";
-     copyStack.pop();
+   int i = 0;
+   char letter;
+   cout << "Please enter 10 letters in alpabetical order.  Enter the minus sign \'-\' if you wish to remove the"
+            " previous character from the list." << endl;
+
+  //check the 10 characters for flag '-' that tells to erase previous entry.  Else keep adding letters to the stack.
+   while (i < 10) {
+     cout << "Please enter a letter: ";
+     cin >> letter;
+     if(letter == '-'){
+       stack.pop();
+     } else{
+       stack.push(letter);
+       i++;
+     }
    }
+   //print the stack
+   printForwards(stack);
    cout << endl;
-   copyStack = stack;
-   test(stack);
-   if(!stack.isEmptyStack()){
-     cout << "Original stack is not empty." << endl
-          << "Top element of original stack = " << copyStack.top() << endl;
-   }
-   dummyStack = stack;
-   cout << "dummyStack = ";
-   while(!dummyStack.isEmptyStack()){
-     cout << dummyStack.top() << " ";
-     dummyStack.pop();
-   }
-   cout << endl;
-   system("PAUSE");
-   return 0;
 }
 
-void test(stackType<int> other){
-  if(!other.isEmptyStack()){
-    cout << "Other is not empty" << endl
-         << "top element of other is = "
-         << other.top() << endl;
+void printForwards(stackType<char> stack){
+  if(stack.isEmptyStack()){
+    return;
+  } else{
+    char temp = stack.top();
+
+    stack.pop();
+    printForwards(stack);
+
+    cout << temp << " ";
+
   }
 }
